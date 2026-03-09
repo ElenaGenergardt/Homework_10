@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="insert-initial-categories" author="sergey">
+        <insert tableName="categories">
+            <column name="name" value="Электроника"/>
+            <column name="description" value="Электронные устройства и гаджеты"/>
+        </insert>
+
+        <insert tableName="categories">
+            <column name="name" value="Книги"/>
+            <column name="description" value="Художественная и техническая литература"/>
+        </insert>
+
+        <insert tableName="categories">
+            <column name="name" value="Одежда"/>
+            <column name="description" value="Мужская и женская одежда"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-initial-products" author="sergey">
+        <insert tableName="products">
+            <column name="name" value="Ноутбук ASUS"/>
+            <column name="description" value="15.6 дюймов, Intel Core i5"/>
+            <column name="price" value="45000.00"/>
+            <column name="stock_quantity" value="10"/>
+            <column name="category_id" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="products">
+            <column name="name" value="Смартфон Samsung"/>
+            <column name="description" value="Galaxy S21, 128GB"/>
+            <column name="price" value="35000.00"/>
+            <column name="stock_quantity" value="15"/>
+            <column name="category_id" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="products">
+            <column name="name" value="Война и мир"/>
+            <column name="description" value="Лев Толстой"/>
+            <column name="price" value="599.99"/>
+            <column name="stock_quantity" value="50"/>
+            <column name="category_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
