@@ -5,9 +5,14 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
 
-    <include file="db/changelog/changes/001-create-categories-table.xml"/>
-    <include file="db/changelog/changes/002-create-products-table.xml"/>
-    <include file="db/changelog/changes/003-insert-initial-data.xml"/>
-    <include file="db/changelog/changes/004-add-image-url-to-products.xml"/>
+    <changeSet id="create-products-table" author="sergey">
+        <addColumn tableName="products">
+            <column name="image-url" type="varchar(500)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+
 
 </databaseChangeLog>
